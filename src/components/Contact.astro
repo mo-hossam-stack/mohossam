@@ -1,0 +1,49 @@
+---
+import { CenterTitle } from "./UI";
+---
+
+<section
+    id="contact"
+    class="w-full min-h-screen mb-16 lg:mb-[15em] px-6 py-4 pt-14 bg-background"
+>
+    <CenterTitle title="Contact" color="primary" />
+
+    <div class="w-full flex_center flex-col p-4 text-[1.2em] text-center">
+        <h3
+            class="Fade_Up gradientText font-ubuntu text-[2rem] lg:text-[2.4rem]"
+        >
+            Let's Work Together
+        </h3>
+        <p class="Fade_Up">Let's connect and discuss how we can work together to bring your ideas to life.</p>
+    </div>
+
+    <div
+        class="flex_center flex-col lg:flex-row w-full h-full gap-4 lg:gap-10 lg:px-20 pt-8 pb-16"
+    >
+        <div class="contact-info flex flex-col gap-6 w-full max-w-md">
+            <div class="contact-card bg-LinkBtnGradient p-6 rounded-lg border border-white/10 flex flex-col items-center gap-4">
+                <div class="contact-icon text-3xl text-primary">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-xl font-bold">Email</h3>
+                <a href="mailto:m.hossam1050@nub.edu.eg" class="contact-link text-blue-400 hover:underline">m.hossam1050@nub.edu.eg</a>
+            </div>
+            
+            <div class="contact-card bg-LinkBtnGradient p-6 rounded-lg border border-white/10 flex flex-col items-center gap-4">
+                <div class="contact-icon text-3xl text-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold">Location</h3>
+                <p>Cairo, Egypt</p>
+            </div>
+            
+            <div class="contact-card bg-LinkBtnGradient p-6 rounded-lg border border-white/10 flex flex-col items-center gap-4">
+                <div class="contact-icon text-3xl text-primary">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-bold">Availability</h3>
+                <p>Available for freelance && part-time && full-time</p>
+            </div>
+        </div>
+    </div>
+</section>
