@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon
 } from "../assets/Icons"
 
 import {
@@ -20,6 +20,7 @@ import CrmImage from "../assets/crm.jpg";
 import ChessImage from "../assets/chess.jpg";
 import PythonImage from "../assets/python.jpg";
 import DpmsImage from "../assets/DPMS.png";
+import NotesAppImage from "../assets/notes_app.png";
 
 
 type ProjectsListType = {
@@ -179,6 +180,21 @@ const TechInfo = {
         title: "Bootstrap",
         description: "The most popular HTML, CSS, and JS library in the world.",
         icon: TailwindIcon // Placeholder
+    },
+    Django: {
+        title: "Django",
+        description: "High-level Python web framework that encourages rapid development and clean, pragmatic design.",
+        icon: DjangoIcon
+    },
+    Railway: {
+        title: "Railway",
+        description: "Infrastructure platform that enables instant deployments.",
+        icon: RailwayIcon
+    },
+    Vercel: {
+        title: "Vercel",
+        description: "Platform for frontend frameworks and static sites.",
+        icon: VercelIcon
     }
 };
 
@@ -196,22 +212,69 @@ const FeatureList = {
 
 export const ProjectsList: ProjectsListType = [
     {
-        Name: "Chronograph",
-        ShortDesc: "Elegant e-commerce platform dedicated to luxury watches.",
-        Desc: "Chronograph is an elegant e-commerce platform dedicated to luxury watches, combining premium design with smooth interactivity. Built with HTML, CSS, and JavaScript, it features responsive layouts, GSAP animations, AOS scroll effects, and real-time cart management.",
-        Logo: WatchImage, // Placeholder
-        Shot: WatchImage,
-        Mockup: WatchImage, // Placeholder
-        Theme: "#DAA520",
+        Name: "DPMS",
+        ShortDesc: "Dental Patient Management System desktop application.",
+        Desc: "Dental Patient Management System is a full-featured desktop application designed for dental clinics. Powered by a Django backend and wrapped with Electron, it delivers the convenience of a desktop app with the scalability of a modern web stack.",
+        Logo: DpmsImage,
+        Shot: DpmsImage,
+        Mockup: DpmsImage,
+        Theme: "#007bff",
         Status: "completed",
-        Link: "https://mo-hossam-stack.github.io/golden-time-shop/",
-        Source: "https://github.com/mo-hossam-stack/golden-time-shop",
-        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript],
+        Link: "https://github.com/mo-hossam-stack/orthodontic_patient_portal",
+        Source: "https://github.com/mo-hossam-stack/orthodontic_patient_portal",
+        Tech: [TechInfo.Python, TechInfo.Bootstrap, TechInfo.MySQL],
         features: [
-            FeatureList.Responsive,
             {
-                title: "GSAP Animations",
-                description: "Smooth animations for a premium feel."
+                title: "Patient Management",
+                description: "Manage patients, appointments, and records."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
+    {
+        Name: "Full-Stack Notes App",
+        ShortDesc: "Production-ready full-stack notes app with JWT auth.",
+        Desc: "A production-ready full‑stack application that provides a JWT‑secured Django REST API for personal notes and a modern React (Vite) frontend. It includes user registration, token-based authentication, and complete note CRUD operations.",
+        Logo: NotesAppImage,
+        Shot: NotesAppImage,
+        Mockup: NotesAppImage,
+        Theme: "#092E20",
+        Status: "completed",
+        Link: "https://fullstack-jwt-notes.vercel.app",
+        Source: "https://github.com/mo-hossam-stack/fullstack-jwt-notes",
+        Tech: [TechInfo.Django, TechInfo.React, TechInfo.Vite, TechInfo.Railway, TechInfo.Vercel],
+        features: [
+            {
+                title: "JWT Authentication",
+                description: "Secure token-based authentication with automatic refresh."
+            },
+            {
+                title: "Real-time Updates",
+                description: "Automatic refresh after create/delete operations."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
+    {
+        Name: "LeetCode Python Journey",
+        ShortDesc: "Collection of Python solutions to +150 LeetCode problems.",
+        Desc: "A curated collection of Python solutions to +150 LeetCode problems, covering arrays, hashing, sliding window, two pointers, binary search, and more. Each file includes the problem statement, difficulty level, and a clean, well-commented solution.",
+        Logo: PythonImage,
+        Shot: PythonImage,
+        Mockup: PythonImage,
+        Theme: "#3776AB",
+        Status: "completed",
+        Link: "https://github.com/mo-hossam-stack/leetcode-python-journey",
+        Source: "https://github.com/mo-hossam-stack/leetcode-python-journey",
+        Tech: [TechInfo.Python],
+        features: [
+            {
+                title: "Algorithms",
+                description: "Solutions for various algorithmic problems."
             }
         ],
         hideProject: false,
@@ -264,43 +327,22 @@ export const ProjectsList: ProjectsListType = [
         versions: []
     },
     {
-        Name: "LeetCode Python Journey",
-        ShortDesc: "Collection of Python solutions to +120 LeetCode problems.",
-        Desc: "A curated collection of Python solutions to +120 LeetCode problems, covering arrays, hashing, sliding window, two pointers, binary search, and more. Each file includes the problem statement, difficulty level, and a clean, well-commented solution.",
-        Logo: PythonImage,
-        Shot: PythonImage,
-        Mockup: PythonImage,
-        Theme: "#3776AB",
+        Name: "Chronograph",
+        ShortDesc: "Elegant e-commerce platform dedicated to luxury watches.",
+        Desc: "Chronograph is an elegant e-commerce platform dedicated to luxury watches, combining premium design with smooth interactivity. Built with HTML, CSS, and JavaScript, it features responsive layouts, GSAP animations, AOS scroll effects, and real-time cart management.",
+        Logo: WatchImage, // Placeholder
+        Shot: WatchImage,
+        Mockup: WatchImage, // Placeholder
+        Theme: "#DAA520",
         Status: "completed",
-        Link: "https://github.com/mo-hossam-stack/leetcode-python-journey",
-        Source: "https://github.com/mo-hossam-stack/leetcode-python-journey",
-        Tech: [TechInfo.Python],
+        Link: "https://mo-hossam-stack.github.io/golden-time-shop/",
+        Source: "https://github.com/mo-hossam-stack/golden-time-shop",
+        Tech: [TechInfo.HTML, TechInfo.CSS, TechInfo.JavaScript],
         features: [
+            FeatureList.Responsive,
             {
-                title: "Algorithms",
-                description: "Solutions for various algorithmic problems."
-            }
-        ],
-        hideProject: false,
-        LogoSize: 50,
-        versions: []
-    },
-    {
-        Name: "DPMS",
-        ShortDesc: "Dental Patient Management System desktop application.",
-        Desc: "Dental Patient Management System is a full-featured desktop application designed for dental clinics. Powered by a Django backend and wrapped with Electron, it delivers the convenience of a desktop app with the scalability of a modern web stack.",
-        Logo: DpmsImage,
-        Shot: DpmsImage,
-        Mockup: DpmsImage,
-        Theme: "#007bff",
-        Status: "completed",
-        Link: "https://github.com/mo-hossam-stack/orthodontic_patient_portal",
-        Source: "https://github.com/mo-hossam-stack/orthodontic_patient_portal",
-        Tech: [TechInfo.Python, TechInfo.Bootstrap, TechInfo.MySQL],
-        features: [
-            {
-                title: "Patient Management",
-                description: "Manage patients, appointments, and records."
+                title: "GSAP Animations",
+                description: "Smooth animations for a premium feel."
             }
         ],
         hideProject: false,

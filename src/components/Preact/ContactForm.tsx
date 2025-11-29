@@ -64,72 +64,86 @@ const ContactForm = () => {
     }
 
     return (
-        <form onSubmit={HandleFormSubmit} className="Fade_Up bg-LinkBtnGradient rounded-md w-full lg:max-w-[650px] px-4 py-2 outline outline-1 outline-white/20 flex_center flex-col">
-            <label
-                htmlFor="name"
-                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-            >
-                Name
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your Name"
-                    className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
-                    autoComplete='name'
-                    required
-                    ref={NameRef} />
-            </label>
-            <label
-                htmlFor="email"
-                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-            >
-                Email
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="example@gmail.com"
-                    className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground"
-                    autoComplete='email'
-                    required
-                    ref={EmailRef} />
-            </label>
-            <label
-                htmlFor="message"
-                className="noCustomCursor w-full h-fit flex justify-center items-start flex-col px-1 py-2"
-            >
-                Message
-                <textarea
-                    rows={5}
-                    id="message"
-                    name="message"
-                    placeholder="Enter your Message"
-                    className="w-full p-2 mt-1 rounded-md border-none outline-none bg-background text-foreground resize-none"
-                    ref={MessageRef} />
-            </label>
+        <form onSubmit={HandleFormSubmit} className="w-full h-full flex flex-col gap-6 p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md relative overflow-hidden group">
+            {/* Form Glow Effect */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-[50px] group-hover:bg-primary/30 transition-all duration-500"></div>
 
-            <div className="w-full flex justify-start items-center gap-4">
+            <div className="flex flex-col gap-2 relative z-10">
+                <label htmlFor="name" className="text-white/80 font-medium ml-1">Name</label>
+                <div className="relative group/input">
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="John Doe"
+                        className="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none text-white placeholder:text-white/20 focus:border-primary/50 focus:bg-white/10 transition-all duration-300"
+                        autoComplete='name'
+                        required
+                        ref={NameRef}
+                    />
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover/input:opacity-100 pointer-events-none transition-opacity duration-300 -z-10 blur-sm"></div>
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-2 relative z-10">
+                <label htmlFor="email" className="text-white/80 font-medium ml-1">Email</label>
+                <div className="relative group/input">
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="john@example.com"
+                        className="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none text-white placeholder:text-white/20 focus:border-primary/50 focus:bg-white/10 transition-all duration-300"
+                        autoComplete='email'
+                        required
+                        ref={EmailRef}
+                    />
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover/input:opacity-100 pointer-events-none transition-opacity duration-300 -z-10 blur-sm"></div>
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-2 relative z-10">
+                <label htmlFor="message" className="text-white/80 font-medium ml-1">Message</label>
+                <div className="relative group/input">
+                    <textarea
+                        rows={5}
+                        id="message"
+                        name="message"
+                        placeholder="Tell me about your project..."
+                        className="w-full p-4 rounded-xl bg-white/5 border border-white/10 outline-none text-white placeholder:text-white/20 focus:border-primary/50 focus:bg-white/10 transition-all duration-300 resize-none"
+                        ref={MessageRef}
+                    />
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover/input:opacity-100 pointer-events-none transition-opacity duration-300 -z-10 blur-sm"></div>
+                </div>
+            </div>
+
+            <div className="w-full flex justify-between items-center mt-2 relative z-10">
                 <button
-                    className="flex_center gap-4 border-none bg-background text-foreground outline outline-1 outline-white/20 my-1 mx-2 py-2 px-6 lg:px-20 rounded-md"
+                    className="relative overflow-hidden group/btn flex items-center gap-3 bg-primary text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 disabled:opacity-70 disabled:hover:scale-100"
                     type="submit"
                     disabled={isLoading}
                 >
+                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
                     {
                         isLoading ? (
                             <>
-                                <span>Sending</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-loader-2 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
+                                <span>Sending...</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-loader-2 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
                             </>
                         ) : (
                             <>
-                                <span>Submit</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-horizontal"><path d="m3 3 3 9-3 9 19-9Z" /><path d="M6 12h16" /></svg>
+                                <span>Send Message</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-send-horizontal group-hover/btn:translate-x-1 transition-transform duration-300"><path d="m3 3 3 9-3 9 19-9Z" /><path d="M6 12h16" /></svg>
                             </>
                         )
                     }
                 </button>
-                <span>{mailStatus.message}</span>
+
+                {mailStatus.message && (
+                    <span className={`text-sm font-medium ${mailStatus.status ? 'text-green-400' : 'text-red-400'} animate-pulse`}>
+                        {mailStatus.message}
+                    </span>
+                )}
             </div>
         </form>
     )

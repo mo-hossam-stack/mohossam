@@ -2,12 +2,8 @@
   "name": "portfolio",
   "type": "module",
   "version": "1.0.3",
-  "homepage": "https://github.com/ChiragChrg/portfolio",
-  "author": {
-    "name": "ChiragChrg",
-    "email": "chiruchirag2001@gmail.com",
-    "url": "https://chiragchrg.netlify.app/"
-  },
+  "homepage": "https://mohossam.netlify.app/",
+  "author": "Mohamed Hossam",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",

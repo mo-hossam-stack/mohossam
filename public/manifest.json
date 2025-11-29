@@ -1,6 +1,6 @@
 {
-    "short_name": "ChiragChrg",
-    "name": "ChiragChrg | Portfolio",
+    "short_name": "Mohamed Hossam",
+    "name": "Mohamed Hossam",
     "icons": [
         {
             "src": "./Icons/144.png",
@@ -30,7 +30,7 @@
     "display": "standalone",
     "theme_color": "#000",
     "background_color": "#000",
-    "description": "Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.",
+    "description": "Welcome to Mohamed Hossam's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.",
     "dir": "ltr",
     "lang": "en",
     "orientation": "portrait",
