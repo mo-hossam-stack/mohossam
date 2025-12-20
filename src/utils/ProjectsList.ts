@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon, PostgresIcon, DockerIcon, NginxIcon, GunicornIcon, BootstrapIcon
 } from "../assets/Icons"
 
 import {
@@ -21,6 +21,7 @@ import ChessImage from "../assets/chess.jpg";
 import PythonImage from "../assets/python.jpg";
 import DpmsImage from "../assets/DPMS.png";
 import NotesAppImage from "../assets/notes_app.png";
+import CourseHubImage from "../assets/CP.png";
 
 
 type ProjectsListType = {
@@ -179,7 +180,7 @@ const TechInfo = {
     Bootstrap: {
         title: "Bootstrap",
         description: "The most popular HTML, CSS, and JS library in the world.",
-        icon: TailwindIcon // Placeholder
+        icon: BootstrapIcon
     },
     Django: {
         title: "Django",
@@ -195,6 +196,26 @@ const TechInfo = {
         title: "Vercel",
         description: "Platform for frontend frameworks and static sites.",
         icon: VercelIcon
+    },
+    PostgreSQL: {
+        title: "PostgreSQL",
+        description: "Powerful, open source object-relational database system.",
+        icon: PostgresIcon
+    },
+    Docker: {
+        title: "Docker",
+        description: "Platform for developing, shipping, and running applications in containers.",
+        icon: DockerIcon
+    },
+    Nginx: {
+        title: "Nginx",
+        description: "High-performance web server, reverse proxy, and load balancer.",
+        icon: NginxIcon
+    },
+    Gunicorn: {
+        title: "Gunicorn",
+        description: "Python WSGI HTTP Server for UNIX.",
+        icon: GunicornIcon
     }
 };
 
@@ -211,6 +232,36 @@ const FeatureList = {
 }
 
 export const ProjectsList: ProjectsListType = [
+    {
+        Name: "CourseHub",
+        ShortDesc: "Scalable video course platform serving 10,000+ students.",
+        Desc: "CourseHub is a high-performance educational platform engineered to handle 10,000+ concurrent students with sub-second latency. Built on a Django & HTMX layered monolith, it leverages advanced database optimizations including partial indexes and query planning to ensure scalability. The infrastructure is containerized with Docker and orchestrated via Nginx and Gunicorn for robust production deployment.",
+        Logo: CourseHubImage,
+        Shot: CourseHubImage,
+        Mockup: CourseHubImage,
+        Theme: "#1e293b",
+        Status: "completed",
+        Link: "https://github.com/mo-hossam-stack/coursehub-django",
+        Source: "https://github.com/mo-hossam-stack/coursehub-django",
+        Tech: [TechInfo.Django, TechInfo.Python, TechInfo.Docker, TechInfo.Nginx, TechInfo.Gunicorn, TechInfo.PostgreSQL, TechInfo.TailwindCSS],
+        features: [
+            {
+                title: "High Scalability",
+                description: "Optimized for 10k+ users with advanced caching strategies and separate media delivery networks."
+            },
+            {
+                title: "Advanced Database Architecture",
+                description: "Utilizes PostgreSQL advanced features, compound indexes, and query optimizations for maximum throughput."
+            },
+            {
+                title: "Secure Video Streaming",
+                description: "Private video delivery via Cloudinary with signed URLs and adaptive bitrate."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
     {
         Name: "DPMS",
         ShortDesc: "Dental Patient Management System desktop application.",
