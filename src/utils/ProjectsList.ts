@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon, PostgresIcon, DockerIcon, NginxIcon, GunicornIcon, BootstrapIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon, PostgresIcon, DockerIcon, NginxIcon, GunicornIcon, BootstrapIcon, FastApiIcon, TesseractIcon, PydanticIcon
 } from "../assets/Icons"
 
 import {
@@ -22,6 +22,7 @@ import PythonImage from "../assets/python.jpg";
 import DpmsImage from "../assets/DPMS.png";
 import NotesAppImage from "../assets/notes_app.png";
 import CourseHubImage from "../assets/CP.png";
+import OcrImage from "../assets/ocr.png";
 
 
 type ProjectsListType = {
@@ -216,6 +217,21 @@ const TechInfo = {
         title: "Gunicorn",
         description: "Python WSGI HTTP Server for UNIX.",
         icon: GunicornIcon
+    },
+    FastAPI: {
+        title: "FastAPI",
+        description: "Modern, high-performance web framework for building APIs with Python.",
+        icon: FastApiIcon
+    },
+    Tesseract: {
+        title: "Tesseract OCR",
+        description: "Open-source optical character recognition engine for text extraction.",
+        icon: TesseractIcon
+    },
+    Pydantic: {
+        title: "Pydantic",
+        description: "Data validation and settings management using Python type hints.",
+        icon: PydanticIcon
     }
 };
 
@@ -256,6 +272,36 @@ export const ProjectsList: ProjectsListType = [
             {
                 title: "Secure Video Streaming",
                 description: "Private video delivery via Cloudinary with signed URLs and adaptive bitrate."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
+    {
+        Name: "FastAPI OCR Microservice",
+        ShortDesc: "Production-grade OCR microservice with FastAPI and React.",
+        Desc: "A production-grade, high-performance microservice designed for extracting text from images using Tesseract OCR. Built with FastAPI and React, this service offers a robust, stateless architecture with strict resource safety, non-blocking execution, and modern observability via structured JSON logging.",
+        Logo: OcrImage,
+        Shot: OcrImage,
+        Mockup: OcrImage,
+        Theme: "#005571",
+        Status: "completed",
+        Link: "https://github.com/mo-hossam-stack/fastapi-ocr-microservice",
+        Source: "https://github.com/mo-hossam-stack/fastapi-ocr-microservice",
+        Tech: [TechInfo.FastAPI, TechInfo.React, TechInfo.Python, TechInfo.Docker, TechInfo.Tesseract, TechInfo.Pydantic, TechInfo.TailwindCSS, TechInfo.Vite, TechInfo.Nginx],
+        features: [
+            {
+                title: "Non-Blocking OCR",
+                description: "Tesseract execution is offloaded to a thread pool to keep the event loop responsive."
+            },
+            {
+                title: "Resource Hardening",
+                description: "Implements 10MB content limits and 30s hard timeouts for CPU-intensive OCR tasks."
+            },
+            {
+                title: "Production Observability",
+                description: "Includes structured JSON logging and built-in health/readiness probes for orchestration."
             }
         ],
         hideProject: false,

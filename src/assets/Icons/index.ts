@@ -39,6 +39,9 @@ export { default as LinuxMintIcon } from "./linuxmint.svg"
 export { default as DrfIcon } from "./drf.svg"
 export { default as SystemDesignIcon } from "./system_design.svg"
 export { default as RestApiRealIcon } from "./rest_api.svg"
+export { default as FastApiIcon } from "./fastapi.png"
+export { default as TesseractIcon } from "./tesseract.png"
+export { default as PydanticIcon } from "./pydantic.png"
 
 // Programming-Stack
 export { default as PythonIcon } from "./python.svg"

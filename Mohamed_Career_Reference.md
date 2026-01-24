@@ -4,7 +4,7 @@ This document contains detailed information about my professional experience, te
 
 ## Personal Information
 - **Name**: Mohamed Hossam
-- **Role**: Full-Stack Software Engineer (Python/Django Specialist)
+- **Role**: Backend Software Engineer (Python/Django Specialist)
 - **Location**: Cairo, Egypt (Open to Remote)
 - **Primary Stack**: Python, Django, PostgreSQL, HTMX, TailwindCSS, Docker.
 

@@ -17,7 +17,8 @@ import {
     MysqlIcon,
     MongoIcon,
     GitIcon,
-    VsCodeIcon
+    VsCodeIcon,
+    FastApiIcon
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
@@ -58,6 +59,7 @@ export const BackendStack = [
     { name: "Nginx", icon: NginxIcon, link: "https://nginx.org/" },
     { name: "Gunicorn", icon: GunicornIcon, link: "https://gunicorn.org/" },
     { name: "Docker", icon: DockerIcon, link: "https://www.docker.com/" },
+    { name: "FastAPI", icon: FastApiIcon, link: "https://fastapi.tiangolo.com/" },
 ];
 
 export const ProgrammingStack = [
