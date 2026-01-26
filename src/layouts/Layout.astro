@@ -37,20 +37,22 @@ import { Footer } from "../components";
 
 		<SEO
 			title="Mohamed Hossam"
-			description="Mohamed Hossam | Computer Science Student & Backend Developer"
+			description="Backend Developer | Django & FastAPI | Open Source & Competitive Programming"
 			canonical="https://mohossam.netlify.app/"
 			openGraph={{
 				basic: {
 					title: "Mohamed Hossam",
 					type: "website",
-					image: "https://avatars.githubusercontent.com/u/113024866?v=4",
+					image: "https://mohossam.netlify.app/assets/profile.jpg",
 					url: "https://mohossam.netlify.app/",
 				},
 			}}
 			twitter={{
+				title: "Mohamed Hossam",
 				description:
-					"Welcome to your gateway to the dynamic world of web development. Dive into a digital realm where my coding and design expertise creates exceptional UI/UX.",
-				card: "summary",
+					"Backend Developer | FastAPI & Django | Open Source & Competitive Programming",
+				card: "summary_large_image",
+				image: "https://mohossam.netlify.app/assets/profile.jpg",
 			}}
 			extend={{
 				link: [
@@ -70,6 +72,10 @@ import { Footer } from "../components";
 					{
 						name: "twitter:url",
 						content: "https://mohossam.netlify.app/",
+					},
+					{
+						name: "twitter:image:alt",
+						content: "Mohamed Hossam - Backend Developer",
 					},
 				],
 			}}
