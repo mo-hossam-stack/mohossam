@@ -21,3 +21,9 @@ pnpm-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
+#open code agents
+agents/
+.opencode
+.agents
+.agent
+skills-lock.json
