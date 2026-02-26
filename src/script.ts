@@ -7,57 +7,54 @@ const transitions = {
     SpringUp: {
         from: {
             opacity: 0,
-            scale: 0.75,
+            scale: 0.8,
         },
         to: {
-            ease: "elastic.out(0.6,0.14)",
+            ease: "elastic.out(0.8, 0.5)",
             opacity: 1,
             scale: 1,
-            duration: 4.25,
-            delay: 1.25,
-            stagger: 0.15,
-            scrollTrigger: {
-                trigger: '.Spring_Up',
-            }
+            duration: 2,
+            delay: 0.5,
+            stagger: 0.2,
         }
     },
     Stagger: {
         from: {
             opacity: 0,
-            y: 50,
+            y: 30,
         },
         to: {
             opacity: 1,
             y: 0,
-            delay: .125,
-            duration: 1.125,
-            stagger: 0.125,
+            delay: 0.1,
+            duration: 0.8,
+            stagger: 0.1,
             ease: "power2.out"
         }
     },
     FadeUp: {
         from: {
             opacity: 0,
-            y: 50,
+            y: 30,
         },
         to: {
             opacity: 1,
             y: 0,
-            duration: 1,
-            stagger: 0.15,
+            duration: 0.8,
+            stagger: 0.1,
         }
     },
     FadeDown: {
         from: {
             opacity: 0,
-            y: -50,
+            y: -30,
         },
         to: {
             opacity: 1,
             y: 0,
-            delay: 0.25,
-            duration: 1,
-            stagger: 0.15,
+            delay: 0.2,
+            duration: 0.8,
+            stagger: 0.1,
             ease: "power2.out",
         }
     },
@@ -67,28 +64,28 @@ const transitions = {
         },
         to: {
             opacity: 1,
-            duration: 1,
-            stagger: 0.125,
+            duration: 0.8,
+            stagger: 0.1,
             ease: "power1.out"
         }
     },
     MobileLink: {
         from: {
-            y: 100,
+            y: 20,
             opacity: 0,
         },
         to: {
             y: 0,
             opacity: 1,
             duration: 0.3,
-            delay: 0.25,
-            stagger: 0.1,
+            delay: 0.2,
+            stagger: 0.08,
             ease: "power1.out"
         }
     }
 }
 
-// Hero Orbit Spring Animation
+// Hero Orbit Spring Animation - only runs once
 ScrollTrigger.batch(".Spring_Up", {
     start: "top bottom",
     onEnter: elements => {
@@ -102,7 +99,6 @@ ScrollTrigger.batch(".Fade_Stagger", {
     start: "top bottom",
     onEnter: elements => {
         gsap.fromTo(elements, transitions.Stagger.from, transitions.Stagger.to);
-
     },
     once: true
 });
@@ -113,17 +109,18 @@ ScrollTrigger.batch(".Project_Stagger", {
         gsap.fromTo(elements,
             {
                 opacity: 0,
-                y: 50,
+                y: 40,
             },
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
-                delay: 0.25,
+                duration: 0.8,
+                delay: 0.2,
                 stagger: {
                     grid: "auto",
-                    each: 0.125
+                    each: 0.1
                 },
+                ease: "power2.out"
             });
     },
     once: true
@@ -132,7 +129,7 @@ ScrollTrigger.batch(".Project_Stagger", {
 
 // FadeUp Animation
 ScrollTrigger.batch(".Fade_Up", {
-    start: "top bottom-=100px",
+    start: "top bottom-=80px",
     onEnter: elements => {
         gsap.fromTo(elements, transitions.FadeUp.from, transitions.FadeUp.to);
     },
@@ -141,7 +138,7 @@ ScrollTrigger.batch(".Fade_Up", {
 
 // FadeDown Animation
 ScrollTrigger.batch(".Fade_Down", {
-    start: "top bottom-=100px",
+    start: "top bottom-=80px",
     onEnter: elements => {
         gsap.fromTo(elements, transitions.FadeDown.from, transitions.FadeDown.to);
     },
@@ -174,8 +171,8 @@ if (MobileNavElement) {
         },
         {
             clipPath: `circle(${(dimensions.height * 2) + 200}px at 40px 40px)`,
-            backgroundColor: "var(--primaryLite)",
-            duration: 0.6,
+            backgroundColor: "var(--surfaceElevated)",
+            duration: 0.5,
             ease: "power1.inOut"
         }
     );
@@ -196,7 +193,7 @@ const closeNav = () => {
     linkTl.reverse()
     setTimeout(() => {
         menuTl.reverse();
-    }, 350)
+    }, 300)
 }
 
 HamMenuButton?.addEventListener('click', () => {
@@ -224,9 +221,18 @@ themeToggleMobileProjectBtn?.addEventListener('click', () => {
     HamMenuButton?.classList.toggle("isOpen");
 });
 
-// Smooth Scrolling
-const lenis = new Lenis();
+// Smooth Scrolling with Lenis - Optimized
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    touchMultiplier: 2,
+});
+
 lenis.on("scroll", ScrollTrigger.update);
+
 gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
@@ -236,13 +242,18 @@ gsap.ticker.lagSmoothing(0);
 document
     .querySelectorAll('nav a, a[href^="#home"]')
     .forEach((el) => {
-        el.addEventListener("click", () => {
+        el.addEventListener("click", (e) => {
+            e.preventDefault();
             const id = el.getAttribute("href")?.slice(1);
             if (!id) return;
 
             const target = document.getElementById(id);
             if (target) {
-                lenis.scrollTo(target);
+                lenis.scrollTo(target, {
+                    offset: 0,
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
 
                 if (window.innerWidth < 1024) {
                     closeNav()
