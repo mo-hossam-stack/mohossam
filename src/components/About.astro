@@ -2,21 +2,51 @@
 import { CenterTitle } from "./UI";
 ---
 
-<section id="about" class="w-full min-h-screen px-6 py-4 pt-14 bg-background">
+<section id="about" class="w-full min-h-screen px-6 py-16 pt-14 bg-background relative">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--primaryColor)] opacity-5 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-[var(--secondaryColor)] opacity-5 rounded-full blur-[150px]"></div>
+    </div>
+    
     <CenterTitle title="About Me" color="primary" />
 
-    <div class="w-full flex justify-center items-center flex-col gap-8">
-        <div class="w-full lg:w-[60%] text-center lg:text-left text-[1.2rem] leading-relaxed">
-            <p class="Fade_Up">
-                Enthusiastic and detail-oriented Backend Developer specializing in Python & Django, building clean,
-                scalable APIs and production-ready web systems. Competitive programming has sharpened my problem-solving mindset,
-                enabling me to design efficient and reliable backend solutions.
+    <div class="w-full flex justify-center items-center flex-col gap-8 relative z-10">
+        <div class="w-full lg:w-[65%] text-center lg:text-left text-[1.1rem] leading-relaxed">
+            <p class="Fade_Up text-[var(--textMuted)] mb-6">
+                I'm a <span class="text-[var(--primaryColor)] font-semibold">Backend Developer</span> and Computer Science student with a passion for building scalable, high-performance systems. My expertise lies in Python, Django, and FastAPI.
             </p>
-            <br />
-            <p class="Fade_Up">
-                Active open-source contributor and currently preparing for Google Summer of Code to deliver impactful projects to the global community.
-                Committed to continuous learning, collaboration, and creating software that lasts — and if I’m not coding, you’ll probably find me at the gym or playing my favorite sports.
+            <p class="Fade_Up text-[var(--textDim)] mb-6">
+                Through competitive programming, I've developed a strong problem-solving mindset that helps me design efficient and reliable backend solutions. I believe in writing clean, maintainable code that stands the test of time.
             </p>
+            <p class="Fade_Up text-[var(--textDim)]">
+                When I'm not coding, you'll find me at the gym, playing sports, or contributing to open-source projects. I'm currently preparing for <span class="text-[var(--primaryColor)] font-medium">Google Summer of Code</span> to make a meaningful impact on the global developer community.
+            </p>
+        </div>
+        
+        <!-- Creative Stats -->
+        <div class="Fade_Up grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl mt-8">
+            <div class="p-5 rounded-2xl bg-[var(--surfaceElevated)] border border-[var(--borderColor)] text-center hover:border-[var(--primaryColor)] transition-all duration-300 group">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[var(--primaryLite)] flex_center text-[var(--primaryColor)] group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg>
+                </div>
+                <span class="block text-2xl font-bold gradientText">2+</span>
+                <span class="text-[var(--textDim)] text-sm">Years of Coding</span>
+            </div>
+            <div class="p-5 rounded-2xl bg-[var(--surfaceElevated)] border border-[var(--borderColor)] text-center hover:border-[var(--primaryColor)] transition-all duration-300 group">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[var(--primaryLite)] flex_center text-[var(--primaryColor)] group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <span class="block text-2xl font-bold gradientText">1000+</span>
+                <span class="text-[var(--textDim)] text-sm">DSA Problems Solved</span>
+            </div>
+            <div class="p-5 rounded-2xl bg-[var(--surfaceElevated)] border border-[var(--borderColor)] text-center hover:border-[var(--primaryColor)] transition-all duration-300 group">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-[var(--primaryLite)] flex_center text-[var(--primaryColor)] group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="block text-2xl font-bold gradientText">10+</span>
+                <span class="text-[var(--textDim)] text-sm">Projects Shipped</span>
+            </div>
         </div>
     </div>
 </section>

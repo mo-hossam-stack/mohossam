@@ -10,89 +10,107 @@ const { ProjectsList } = await ProjectInfo;
 
 <section
     id="projects"
-    class="w-full min-h-screen px-6 py-4 pt-14 bg-background"
+    class="w-full min-h-screen px-6 py-16 pt-14 bg-background relative"
 >
-    <SectionTitle title="My Projects" color="secondary">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-1/4 w-[400px] h-[400px] bg-[var(--secondaryColor)] opacity-[0.03] rounded-full blur-[150px]"></div>
+    </div>
+
+    <SectionTitle title="Featured Projects" color="secondary">
         <div
-            class="Fade_Up relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-12 pb-6"
+            class="Fade_Up relative w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-4 pb-6"
         >
             {
                 ProjectsList?.map((project) => {
                     if (project?.hideProject) return;
 
                     return (
-                        <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col bg-cardGradient overflow-hidden rounded-[0.4em] mt-3 opacity-0">
+                        <div class="Project_Stagger Card_Main w-full h-fit flex_center flex-col bg-[var(--surfaceElevated)] border border-[var(--borderColor)] overflow-hidden rounded-2xl mt-3 opacity-0 hover:border-[var(--borderHover)] transition-all duration-300">
                             <a
                                 href={`/projects/${project?.Name.replaceAll(
                                     " ",
                                     "-",
                                 ).toLowerCase()}`}
-                                class="Projects_Preview w-full relative rounded-[0.4em]"
+                                class="Projects_Preview w-full relative"
                             >
-                                <Image
-                                    class="Card_Image bg-cover opacity-50 transition-opacity w-full"
-                                    style={{
-                                        borderRadius: "0.4em 0.4em 0 100%",
-                                    }}
-                                    src={project.Shot}
-                                    alt={`Project_ScreenShot_${project.Name}`}
-                                    widths={[346, project.Shot.width]}
-                                    sizes={`(max-width: 720px) 346px, ${project.Shot.width}px`}
-                                    loading="lazy"
-                                />
-                                <Image
-                                    class="absolute left-6 bottom-6"
-                                    src={project.Logo}
-                                    alt={`Project_Logo_${project.Name}`}
-                                    width={project.LogoSize}
-                                    height={project.LogoSize}
-                                    loading="lazy"
-                                />
+                                <div class="aspect-video w-full overflow-hidden">
+                                    <Image
+                                        class="Card_Image bg-cover w-full h-full object-cover"
+                                        src={project.Shot}
+                                        alt={`Project Screenshot - ${project.Name}`}
+                                        widths={[346, project.Shot.width]}
+                                        sizes={`(max-width: 720px) 346px, ${project.Shot.width}px`}
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="absolute bottom-4 left-4 p-2 rounded-lg bg-[var(--base)]/80 backdrop-blur-sm">
+                                    <Image
+                                        src={project.Logo}
+                                        alt={`Project Logo - ${project.Name}`}
+                                        width={project.LogoSize}
+                                        height={project.LogoSize}
+                                        loading="lazy"
+                                    />
+                                </div>
                             </a>
-                            <div class="w-full text-[0.95em] px-4">
-                                <div class="flex justify-between items-center">
-                                    <h3 class="font-ubuntu text-[1.4em] py-3">
+                            <div class="w-full p-5">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="font-ubuntu text-[1.3em] font-semibold text-[var(--text)]">
                                         {project.Name}
                                     </h3>
-                                    <div class="flex">
+                                    <div class="flex gap-2">
                                         {project.Status === "development" && (
-                                            <div class="flex_center gap-2 px-1 py-0.5 text-orange-400">
-                                                <WrenchIcon size={16} />
-
-                                                <span class="text-[0.8em]">
-                                                    Under Development
-                                                </span>
+                                            <div class="flex_center gap-1 px-2 py-1 text-orange-400 bg-orange-400/10 rounded-md text-xs">
+                                                <WrenchIcon size={12} />
+                                                <span>In Progress</span>
                                             </div>
                                         )}
 
                                         <a
                                             href={project.Link}
-                                            title={`${project.Name} Live`}
+                                            title={`${project.Name} Live Demo`}
                                             target="_blank"
                                             rel="noreferrer"
-                                            class="Projects_Link flex"
+                                            class="Projects_Link flex p-2"
+                                            aria-label={`View ${project.Name} demo`}
                                         >
-                                            <ExternalLinkIcon aria-hidden="true" />
-                                            <span class="sr-only">
-                                                Demo for {project.Name}
-                                            </span>
+                                            <ExternalLinkIcon size={16} aria-hidden="true" />
                                         </a>
+                                        {project.Source && (
+                                            <a
+                                                href={project.Source}
+                                                title={`${project.Name} Source Code`}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                class="Projects_Link flex p-2"
+                                                aria-label={`View ${project.Name} source code`}
+                                            >
+                                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                                </svg>
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
-                                <p class="text-center">{project.ShortDesc}</p>
+                                <p class="text-[var(--textDim)] text-sm text-center mb-4">{project.ShortDesc}</p>
 
-                                <div class="w-full flex_center gap-4 py-3">
-                                    {project.Tech.map((tech) => {
+                                <div class="w-full flex_center gap-3 flex-wrap">
+                                    {project.Tech.slice(0, 5).map((tech) => {
                                         return (
                                             <Image
                                                 src={tech.icon}
-                                                alt={`TechIcon ${tech.title}`}
-                                                width={22}
-                                                height={22}
+                                                alt={`Technology: ${tech.title}`}
+                                                width={20}
+                                                height={20}
                                                 loading="lazy"
+                                                class="opacity-70 hover:opacity-100 transition-opacity"
                                             />
                                         );
                                     })}
+                                    {project.Tech.length > 5 && (
+                                        <span class="text-[var(--textDim)] text-xs">+{project.Tech.length - 5} more</span>
+                                    )}
                                 </div>
                             </div>
                         </div>
