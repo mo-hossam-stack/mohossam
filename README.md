@@ -25,6 +25,7 @@ The portfolio leverages the following technologies:
 
 Follow these steps to run the project locally:
 
+
 ### Steps
 1. Clone the repository:
    ```bash
