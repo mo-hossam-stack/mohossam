@@ -23,6 +23,7 @@ The portfolio leverages the following technologies:
 
 ## 🛠️ Installation and Setup
 
+
 Follow these steps to run the project locally:
 
 
