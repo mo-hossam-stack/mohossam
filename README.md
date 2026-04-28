@@ -21,6 +21,7 @@ The portfolio leverages the following technologies:
       <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40" height="40"/></a>&emsp;
 </div>
 
+
 ## 🛠️ Installation and Setup
 
 
