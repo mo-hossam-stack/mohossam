@@ -221,6 +221,13 @@ themeToggleMobileProjectBtn?.addEventListener('click', () => {
     HamMenuButton?.classList.toggle("isOpen");
 });
 
+const resumeMobileBtn = document.querySelector("#mobileHeaderNav .MobileHeader_ActionBtn");
+resumeMobileBtn?.addEventListener('click', () => {
+    closeNav()
+    isMenuOpen = !isMenuOpen;
+    HamMenuButton?.classList.toggle("isOpen");
+});
+
 // Smooth Scrolling with Lenis - Optimized
 const lenis = new Lenis({
     duration: 1.2,
@@ -240,11 +247,13 @@ gsap.ticker.lagSmoothing(0);
 
 // Smooth scroll on Nav Link Click
 document
-    .querySelectorAll('nav a, a[href^="#home"]')
+    .querySelectorAll('nav a[href^="#"], nav a[href^="/#"]')
     .forEach((el) => {
         el.addEventListener("click", (e) => {
             e.preventDefault();
-            const id = el.getAttribute("href")?.slice(1);
+            let href = el.getAttribute("href") || "";
+            // Remove leading "/" if present, then remove leading "#"
+            const id = href.replace(/^\//, "").replace(/^#/, "");
             if (!id) return;
 
             const target = document.getElementById(id);
