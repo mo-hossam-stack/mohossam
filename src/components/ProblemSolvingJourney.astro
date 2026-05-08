@@ -1,0 +1,90 @@
+---
+import ProblemSolvingEffects from "./Preact/ProblemSolvingEffects";
+import ProblemSolvingStats from "./Preact/ProblemSolvingStats";
+import { SectionTitle } from "./UI";
+---
+
+<section
+	id="problem-solving"
+	data-problem-solving
+	class="relative w-full overflow-hidden bg-background px-6 py-16 pt-14"
+>
+	<ProblemSolvingEffects client:load />
+
+	<div class="absolute inset-0 pointer-events-none overflow-hidden">
+		<div class="absolute left-[-10%] top-20 h-[420px] w-[420px] rounded-full bg-[var(--primaryColor)] opacity-[0.08] blur-[150px]"></div>
+		<div class="absolute bottom-[-8%] right-[-8%] h-[440px] w-[440px] rounded-full bg-[var(--secondaryColor)] opacity-[0.08] blur-[160px]"></div>
+		<div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.02),transparent)]"></div>
+	</div>
+
+	<div class="relative z-10 mx-auto max-w-[1400px]">
+		<SectionTitle title="Problem Solving Journey" color="secondary">
+			<div class="grid grid-cols-1 gap-6 pb-6 xl:grid-cols-[1.15fr_0.85fr]">
+				<div class="Fade_Up rounded-[2rem] border border-[var(--borderColor)] bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-xl lg:p-8">
+					<p class="mb-4 inline-flex rounded-full border border-white/10 bg-[var(--primaryLiteAlt)] px-4 py-2 text-xs uppercase tracking-[0.35em] text-[var(--textMuted)]">
+						Algorithms • Contests • Consistency
+					</p>
+					<h2 class="font-ubuntu text-[2rem] leading-tight text-[var(--text)] lg:text-[3rem]">
+						Turning repetition into instinct and contests into confidence.
+					</h2>
+					<p class="mt-5 max-w-3xl text-sm leading-8 text-[var(--textMuted)] lg:text-base">
+						This section tells the side of my work that lives beyond shipping products: sharpening fundamentals, learning patterns deeply, and building the kind of calm problem-solving that holds up under pressure.
+					</p>
+
+					<div class="mt-8 grid gap-4 md:grid-cols-3">
+						<div class="rounded-[1.6rem] border border-white/5 bg-black/10 p-4">
+							<p class="text-xs uppercase tracking-[0.3em] text-[var(--textDim)]">Phase 01</p>
+							<h3 class="mt-3 font-ubuntu text-[1.15rem] text-[var(--text)]">Foundation</h3>
+							<p class="mt-2 text-sm leading-7 text-[var(--textMuted)]">
+								Started with core data structures, loops, recursion, and the habit of solving one more problem every day.
+							</p>
+						</div>
+						<div class="rounded-[1.6rem] border border-white/5 bg-black/10 p-4">
+							<p class="text-xs uppercase tracking-[0.3em] text-[var(--textDim)]">Phase 02</p>
+							<h3 class="mt-3 font-ubuntu text-[1.15rem] text-[var(--text)]">Pattern Depth</h3>
+							<p class="mt-2 text-sm leading-7 text-[var(--textMuted)]">
+								Used LeetCode to go deeper on arrays, graphs, DP, sliding windows, greedy strategies, and cleaner implementations.
+							</p>
+						</div>
+						<div class="rounded-[1.6rem] border border-white/5 bg-black/10 p-4">
+							<p class="text-xs uppercase tracking-[0.3em] text-[var(--textDim)]">Phase 03</p>
+							<h3 class="mt-3 font-ubuntu text-[1.15rem] text-[var(--text)]">Contest Rhythm</h3>
+							<p class="mt-2 text-sm leading-7 text-[var(--textMuted)]">
+								Brought that preparation into Codeforces contests where speed, precision, and recovery under time pressure matter.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="Fade_Up flex flex-col gap-6">
+					<div class="rounded-[2rem] border border-[var(--borderColor)] bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+						<p class="font-satisfy text-[2rem] text-primary">Why this matters</p>
+						<p class="mt-4 text-sm leading-8 text-[var(--textMuted)] lg:text-base">
+							Problem solving changed how I approach engineering: break ambiguity down, find constraints quickly, test ideas fast, and stay structured when complexity rises.
+						</p>
+						<div class="mt-6 flex flex-wrap gap-2">
+							<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[var(--textMuted)]">Graphs</span>
+							<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[var(--textMuted)]">Dynamic Programming</span>
+							<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[var(--textMuted)]">Greedy</span>
+							<span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[var(--textMuted)]">Contests</span>
+						</div>
+					</div>
+
+					<div class="rounded-[2rem] border border-[var(--borderColor)] bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+						<p class="text-xs uppercase tracking-[0.35em] text-[var(--textDim)]">What you will see below</p>
+						<ul class="mt-4 space-y-3 text-sm leading-7 text-[var(--textMuted)] lg:text-base">
+							<li>• Live aggregated stats from Codeforces and LeetCode.</li>
+							<li>• Contribution-style activity graph and recent accepted submissions.</li>
+							<li>• Contest and rating movement captured in a compact premium UI.</li>
+							<li>• Lightweight interactive depth effects tuned for performance.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="Fade_Up mt-2">
+				<ProblemSolvingStats client:visible />
+			</div>
+		</SectionTitle>
+	</div>
+</section>
