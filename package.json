@@ -10,7 +10,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.mjs",
     "prepare": "husky",
     "release": "semantic-release",
     "release:dry": "semantic-release --dry-run"
