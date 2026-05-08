@@ -1,0 +1,7 @@
+dist/
+.astro/
+node_modules/
+src/**/*.astro
+src/**/*.ts
+src/**/*.tsx
+src/**/*.d.ts
