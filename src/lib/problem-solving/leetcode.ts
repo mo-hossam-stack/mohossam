@@ -209,26 +209,7 @@ export async function getLeetCodeProfile(): Promise<ProblemSolvingPlatformData> 
 					contestPayload.userContestRanking?.attendedContestsCount ??
 					contestHistory.length,
 			},
-			insights: [
-				{
-					label: "Global Rank",
-					value: formatNullableNumber(contestPayload.userContestRanking?.globalRanking),
-				},
-				{
-					label: "Top",
-					value: contestPayload.userContestRanking?.topPercentage
-						? `${contestPayload.userContestRanking.topPercentage.toFixed(1)}%`
-						: "—",
-				},
-				{
-					label: "Reputation",
-					value: formatNullableNumber(matchedUser.profile.reputation),
-				},
-				{
-					label: "Site Rank",
-					value: formatNullableNumber(matchedUser.profile.ranking),
-				},
-			],
+			insights: [],
 			difficultyBreakdown: breakdown,
 			activity: toActivity(resolveLeetCodeActivityMap(matchedUser.submissionCalendar)),
 			recentActivity: uniqueRecentActivity(recentActivity),
