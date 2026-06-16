@@ -3,7 +3,6 @@
 
 # Mohamed Hossam | Personal Portfolio | Fullstack Web Developer
 
-
 Welcome to Mohamed Hossam's portfolio website. This platform showcases my projects, skills, and experience as a Fullstack Web Developer.
 
 ## 🚀 Live Demo
