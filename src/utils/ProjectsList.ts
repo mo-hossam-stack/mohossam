@@ -1,5 +1,5 @@
 import {
-    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon, PostgresIcon, DockerIcon, NginxIcon, GunicornIcon, BootstrapIcon, FastApiIcon, TesseractIcon, PydanticIcon
+    HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon, PythonIcon, DjangoIcon, RailwayIcon, VercelIcon, PostgresIcon, DockerIcon, NginxIcon, GunicornIcon, BootstrapIcon, FastApiIcon, TesseractIcon, PydanticIcon, NetlifyIcon, GroqIcon
 } from "../assets/Icons"
 
 import {
@@ -23,6 +23,7 @@ import DpmsImage from "../assets/DPMS.png";
 import NotesAppImage from "../assets/notes_app.png";
 import CourseHubImage from "../assets/CP.png";
 import OcrImage from "../assets/ocr.png";
+import UniHelpImage from "../assets/university_ai.png";
 
 
 type ProjectsListType = {
@@ -235,6 +236,18 @@ const TechInfo = {
     }
 };
 
+const TechGroq = {
+    title: "Groq Cloud",
+    description: "Ultra-fast LLM inference API powering Llama 3.3 70B with sub-second latency for real-time AI responses.",
+    icon: GroqIcon
+};
+
+const TechNetlify = {
+    title: "Netlify",
+    description: "Global CDN platform for deploying the React SPA with automatic HTTPS and edge delivery.",
+    icon: NetlifyIcon
+};
+
 // Common Features List
 const FeatureList = {
     Responsive: {
@@ -248,6 +261,48 @@ const FeatureList = {
 }
 
 export const ProjectsList: ProjectsListType = [
+    {
+        Name: "UniHelp AI",
+        ShortDesc: "Bilingual AI assistant serving university students 24/7 with hallucination-free answers.",
+        Desc: "UniHelp AI is a bilingual (Arabic/English) conversational assistant purpose-built for Nahda University — Faculty of Computers and Information. It delivers instant, grounded answers to student queries across 6 knowledge domains: Course Registration, Academic Calendar, Fees & Payments, Results & GPA, Exams & Timetables, and Portal Help. The system constrains the LLM to verified institutional JSON data — eliminating hallucination at the architectural level. The backend is a Django 6 + DRF API deployed on Railway, with a React 18 frontend on Netlify CDN.",
+        Logo: UniHelpImage,
+        Shot: UniHelpImage,
+        Mockup: UniHelpImage,
+        Theme: "#10B981",
+        Status: "completed",
+        Link: "https://github.com/mo-hossam-stack/university-ai-assistant",
+        Source: "https://github.com/mo-hossam-stack/university-ai-assistant",
+        Tech: [TechInfo.React, TechInfo.TailwindCSS, TechInfo.Django, TechInfo.Python, TechGroq, TechNetlify, TechInfo.Railway, TechInfo.PostgreSQL],
+        features: [
+            {
+                title: "Grounded Generation",
+                description: "The LLM is constrained exclusively to verified institutional JSON data — refusing to answer anything outside its knowledge base, eliminating hallucination at the architectural level."
+            },
+            {
+                title: "Bilingual Arabic/English Support",
+                description: "Handles mixed-language queries natively, with explicit code-switching detection rules in the system prompt. Students can ask in Arabic, English, or a mix and receive coherent responses."
+            },
+            {
+                title: "6 Knowledge Domains",
+                description: "Covers Course Registration, Academic Calendar, Fees & Payments, Results & GPA, Exams & Timetables, and Portal Help — each backed by structured JSON data loaded per-intent."
+            },
+            {
+                title: "Ultra-Fast AI Inference",
+                description: "Groq Cloud's Llama 3.3 70B delivers sub-second response latency, enabling a genuinely real-time conversational experience at scale."
+            },
+            {
+                title: "Progressive Multi-Agent Architecture",
+                description: "Designed with a layered architecture — Intent Classifier routes queries to domain-specific handlers, injecting the relevant JSON context into the LLM prompt without any API contract changes."
+            },
+            {
+                title: "Security in Depth",
+                description: "Client-side XSS sanitization, CORS whitelisting, CSRF protection, Django security middleware, HSTS, and prompt-level guardrails work together across every layer."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
     {
         Name: "CourseHub",
         ShortDesc: "Scalable video course platform serving 10,000+ students.",
