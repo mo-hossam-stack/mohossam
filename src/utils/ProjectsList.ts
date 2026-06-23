@@ -420,7 +420,7 @@ export const ProjectsList: ProjectsListType = [
         Mockup: PythonImage,
         Theme: "#3776AB",
         Status: "completed",
-        Link: "https://leetcode-solution-pipeline.netlify.app/",
+        Link: "https://leetcode-solution-pipeline.vercel.app/",
         Source: "https://github.com/mo-hossam-stack/leetcode-python-journey",
         Tech: [TechInfo.Python],
         features: [
