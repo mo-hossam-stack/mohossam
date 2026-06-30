@@ -1,16 +1,10 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/mohossam/deploys)
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 # Mohamed Hossam | Personal Portfolio | Fullstack Web Developer
 
 Welcome to Mohamed Hossam's portfolio website. This platform showcases my projects, skills, and experience as a Fullstack Web Developer.
 
-## 🚀 Live Demo
-Explore the live demo of the portfolio: [https://mohossam.netlify.app](https://mohossam.netlify.app)
+##  [Live Demo](https://mohossam.vercel.app)
 
-## 📚 Tools and Tech Stack
+##  Tools and Tech Stack
 
 The portfolio leverages the following technologies:
 <div align="center">
@@ -23,7 +17,7 @@ The portfolio leverages the following technologies:
 
 
 
-## 🛠️ Installation and Setup
+##  Installation and Setup
 
 
 Follow these steps to run the project locally:
@@ -47,13 +41,11 @@ Follow these steps to run the project locally:
    npm run dev
    ```
 
-## 🌟 Features
+##  Features
 
 - **Optimized Performance**: Built with Astro for lightning-fast load times.
 - **Responsive Design**: Tailored for all devices using TailwindCSS.
 - **Interactive Animations**: Powered by GSAP for smooth transitions.
 - **SEO Friendly**: Enhanced visibility with Astro SEO integration.
 - **Dynamic Components**: Utilizes Preact for modular and reusable UI elements.
-
-## 📄 License
 
