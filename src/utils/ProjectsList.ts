@@ -485,8 +485,8 @@ export const ProjectsList: ProjectsListType = [
         Mockup: CrmImage,
         Theme: "#000000",
         Status: "completed",
-        Link: "https://github.com/mo-hossam-stack/django-crm",
-        Source: "https://github.com/mo-hossam-stack/django-crm",
+        Link: "https://github.com/mo-hossam-stack/djangoCRM",
+        Source: "https://github.com/mo-hossam-stack/djangoCRM",
         Tech: [TechInfo.Python, TechInfo.Bootstrap, TechInfo.MySQL],
         features: [
             FeatureList.Responsive,
