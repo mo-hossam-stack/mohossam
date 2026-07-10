@@ -456,8 +456,8 @@ export const ProjectsList: ProjectsListType = [
     },
     {
         Name: "LeetCode Python Journey",
-        ShortDesc: "Collection of Python solutions to +520 LeetCode problems.",
-        Desc: "A curated collection of Python solutions to +520 LeetCode problems, covering arrays, hashing, sliding window, two pointers, binary search, and more. Each file includes the problem statement, difficulty level, and a clean, well-commented solution.",
+        ShortDesc: "Collection of Python solutions to +550 LeetCode problems.",
+        Desc: "A curated collection of Python solutions to +550 LeetCode problems, covering arrays, hashing, sliding window, two pointers, binary search, and more. Each file includes the problem statement, difficulty level, and a clean, well-commented solution.",
         Logo: PythonImage,
         Shot: PythonImage,
         Mockup: PythonImage,
