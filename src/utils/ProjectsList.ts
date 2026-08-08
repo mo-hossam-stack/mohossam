@@ -263,41 +263,29 @@ const FeatureList = {
 
 export const ProjectsList: ProjectsListType = [
     {
-        Name: "DSA Studio",
-        ShortDesc: "Interactive data structures & algorithms visualizer with step-by-step animation.",
-        Desc: "DSA Studio is an educational web app that visualizes classic sorting and searching algorithms in a clean, responsive interface. Instead of only showing the final result, it breaks each algorithm into snapshots so users can follow how the array changes, which values are being compared, and which line of code is currently active. Built with React 18, Vite, and Tailwind CSS, it features metadata-driven routing, reusable visualization state management, active code-line highlighting, and a production-ready deployment setup with Vercel, Docker, and Nginx.",
-        Logo: DsaStudioImage,
-        Shot: DsaStudioImage,
-        Mockup: DsaStudioImage,
-        Theme: "#3B82F6",
+        Name: "CourseHub",
+        ShortDesc: "Scalable video course platform serving 10,000+ students.",
+        Desc: "CourseHub is a high-performance educational platform engineered to handle 10,000+ concurrent students with sub-second latency. Built on a Django & HTMX layered monolith, it leverages advanced database optimizations including partial indexes and query planning to ensure scalability. The infrastructure is containerized with Docker and orchestrated via Nginx and Gunicorn for robust production deployment.",
+        Logo: CourseHubImage,
+        Shot: CourseHubImage,
+        Mockup: CourseHubImage,
+        Theme: "#1e293b",
         Status: "completed",
-        Link: "https://dsa-studio-henna.vercel.app/",
-        Source: "https://github.com/mo-hossam-stack/DSA-Studio",
-        Tech: [TechInfo.React, TechInfo.Vite, TechInfo.TailwindCSS, TechInfo.TypeScript, TechInfo.Docker, TechInfo.Nginx, TechInfo.Vercel],
+        Link: "https://github.com/mo-hossam-stack/coursehub-django",
+        Source: "https://github.com/mo-hossam-stack/coursehub-django",
+        Tech: [TechInfo.Django, TechInfo.Python, TechInfo.Docker, TechInfo.Nginx, TechInfo.Gunicorn, TechInfo.PostgreSQL, TechInfo.TailwindCSS],
         features: [
             {
-                title: "Step-by-Step Visualization",
-                description: "Each algorithm is broken into array-state snapshots with highlighted comparison indices, human-readable explanations, and active code-line highlighting — all updating in sync."
+                title: "High Scalability",
+                description: "Optimized for 10k+ users with advanced caching strategies and separate media delivery networks."
             },
             {
-                title: "Metadata-Driven Algorithm Catalog",
-                description: "All algorithm content (names, slugs, pseudocode, C++ code, complexity data) lives in a single metadata file, making it trivial to add new algorithms without rewriting the page layout."
+                title: "Advanced Database Architecture",
+                description: "Utilizes PostgreSQL advanced features, compound indexes, and query optimizations for maximum throughput."
             },
             {
-                title: "Reusable Playback Hook",
-                description: "A custom useVisualizer hook manages step index, play/pause state, adjustable speed, navigation, and auto-stop — completely decoupled from presentation components."
-            },
-            {
-                title: "Dual Code Views",
-                description: "The code panel offers three switchable views: pseudocode, standard C++, and a compact C++ alternative — with active-line highlighting during playback."
-            },
-            {
-                title: "Custom Array Input & Random Generation",
-                description: "Users can enter a custom array with validation or generate a random dataset for quick demos. Binary search auto-detects unsorted input and notifies the user."
-            },
-            {
-                title: "Persistent Dark Mode & Responsive UI",
-                description: "Theme preference is stored in localStorage and restored on reload. Navigation adapts to desktop tabs or a mobile selector for a usable experience on any screen size."
+                title: "Secure Video Streaming",
+                description: "Private video delivery via Cloudinary with signed URLs and adaptive bitrate."
             }
         ],
         hideProject: false,
@@ -340,36 +328,6 @@ export const ProjectsList: ProjectsListType = [
             {
                 title: "Security in Depth",
                 description: "Client-side XSS sanitization, CORS whitelisting, CSRF protection, Django security middleware, HSTS, and prompt-level guardrails work together across every layer."
-            }
-        ],
-        hideProject: false,
-        LogoSize: 50,
-        versions: []
-    },
-    {
-        Name: "CourseHub",
-        ShortDesc: "Scalable video course platform serving 10,000+ students.",
-        Desc: "CourseHub is a high-performance educational platform engineered to handle 10,000+ concurrent students with sub-second latency. Built on a Django & HTMX layered monolith, it leverages advanced database optimizations including partial indexes and query planning to ensure scalability. The infrastructure is containerized with Docker and orchestrated via Nginx and Gunicorn for robust production deployment.",
-        Logo: CourseHubImage,
-        Shot: CourseHubImage,
-        Mockup: CourseHubImage,
-        Theme: "#1e293b",
-        Status: "completed",
-        Link: "https://github.com/mo-hossam-stack/coursehub-django",
-        Source: "https://github.com/mo-hossam-stack/coursehub-django",
-        Tech: [TechInfo.Django, TechInfo.Python, TechInfo.Docker, TechInfo.Nginx, TechInfo.Gunicorn, TechInfo.PostgreSQL, TechInfo.TailwindCSS],
-        features: [
-            {
-                title: "High Scalability",
-                description: "Optimized for 10k+ users with advanced caching strategies and separate media delivery networks."
-            },
-            {
-                title: "Advanced Database Architecture",
-                description: "Utilizes PostgreSQL advanced features, compound indexes, and query optimizations for maximum throughput."
-            },
-            {
-                title: "Secure Video Streaming",
-                description: "Private video delivery via Cloudinary with signed URLs and adaptive bitrate."
             }
         ],
         hideProject: false,
@@ -429,6 +387,70 @@ export const ProjectsList: ProjectsListType = [
         versions: []
     },
     {
+        Name: "LeetCode Python Journey",
+        ShortDesc: "Collection of Python solutions to +600 LeetCode problems.",
+        Desc: "A curated collection of Python solutions to +600 LeetCode problems, covering arrays, hashing, sliding window, two pointers, binary search, and more. Each file includes the problem statement, difficulty level, and a clean, well-commented solution.",
+        Logo: PythonImage,
+        Shot: PythonImage,
+        Mockup: PythonImage,
+        Theme: "#3776AB",
+        Status: "completed",
+        Link: "https://leetcode-solution-pipeline.vercel.app/",
+        Source: "https://github.com/mo-hossam-stack/leetcode-python-journey",
+        Tech: [TechInfo.Python],
+        features: [
+            {
+                title: "Algorithms",
+                description: "Solutions for various algorithmic problems."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
+    {
+        Name: "DSA Studio",
+        ShortDesc: "Interactive data structures & algorithms visualizer with step-by-step animation.",
+        Desc: "DSA Studio is an educational web app that visualizes classic sorting and searching algorithms in a clean, responsive interface. Instead of only showing the final result, it breaks each algorithm into snapshots so users can follow how the array changes, which values are being compared, and which line of code is currently active. Built with React 18, Vite, and Tailwind CSS, it features metadata-driven routing, reusable visualization state management, active code-line highlighting, and a production-ready deployment setup with Vercel, Docker, and Nginx.",
+        Logo: DsaStudioImage,
+        Shot: DsaStudioImage,
+        Mockup: DsaStudioImage,
+        Theme: "#3B82F6",
+        Status: "completed",
+        Link: "https://dsa-studio-henna.vercel.app/",
+        Source: "https://github.com/mo-hossam-stack/DSA-Studio",
+        Tech: [TechInfo.React, TechInfo.Vite, TechInfo.TailwindCSS, TechInfo.TypeScript, TechInfo.Docker, TechInfo.Nginx, TechInfo.Vercel],
+        features: [
+            {
+                title: "Step-by-Step Visualization",
+                description: "Each algorithm is broken into array-state snapshots with highlighted comparison indices, human-readable explanations, and active code-line highlighting — all updating in sync."
+            },
+            {
+                title: "Metadata-Driven Algorithm Catalog",
+                description: "All algorithm content (names, slugs, pseudocode, C++ code, complexity data) lives in a single metadata file, making it trivial to add new algorithms without rewriting the page layout."
+            },
+            {
+                title: "Reusable Playback Hook",
+                description: "A custom useVisualizer hook manages step index, play/pause state, adjustable speed, navigation, and auto-stop — completely decoupled from presentation components."
+            },
+            {
+                title: "Dual Code Views",
+                description: "The code panel offers three switchable views: pseudocode, standard C++, and a compact C++ alternative — with active-line highlighting during playback."
+            },
+            {
+                title: "Custom Array Input & Random Generation",
+                description: "Users can enter a custom array with validation or generate a random dataset for quick demos. Binary search auto-detects unsorted input and notifies the user."
+            },
+            {
+                title: "Persistent Dark Mode & Responsive UI",
+                description: "Theme preference is stored in localStorage and restored on reload. Navigation adapts to desktop tabs or a mobile selector for a usable experience on any screen size."
+            }
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: []
+    },
+    {
         Name: "Full-Stack Notes App",
         ShortDesc: "Production-ready full-stack notes app with JWT auth.",
         Desc: "A production-ready full‑stack application that provides a JWT‑secured Django REST API for personal notes and a modern React (Vite) frontend. It includes user registration, token-based authentication, and complete note CRUD operations.",
@@ -448,28 +470,6 @@ export const ProjectsList: ProjectsListType = [
             {
                 title: "Real-time Updates",
                 description: "Automatic refresh after create/delete operations."
-            }
-        ],
-        hideProject: false,
-        LogoSize: 50,
-        versions: []
-    },
-    {
-        Name: "LeetCode Python Journey",
-        ShortDesc: "Collection of Python solutions to +550 LeetCode problems.",
-        Desc: "A curated collection of Python solutions to +550 LeetCode problems, covering arrays, hashing, sliding window, two pointers, binary search, and more. Each file includes the problem statement, difficulty level, and a clean, well-commented solution.",
-        Logo: PythonImage,
-        Shot: PythonImage,
-        Mockup: PythonImage,
-        Theme: "#3776AB",
-        Status: "completed",
-        Link: "https://leetcode-solution-pipeline.vercel.app/",
-        Source: "https://github.com/mo-hossam-stack/leetcode-python-journey",
-        Tech: [TechInfo.Python],
-        features: [
-            {
-                title: "Algorithms",
-                description: "Solutions for various algorithmic problems."
             }
         ],
         hideProject: false,
