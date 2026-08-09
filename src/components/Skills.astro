@@ -5,6 +5,8 @@ import {
     BackendStack,
     ProgrammingStack,
     ToolsStack,
+    ArchitectureStack,
+    SecurityStack,
 } from "../utils/SkillStack";
 ---
 
@@ -34,6 +36,18 @@ import {
         <div class="Fade_Up flex_center flex-col gap-4 py-6 px-6 w-full h-full min-h-[280px] rounded-2xl bg-[var(--cardGlass)] border border-[var(--borderColor)] backdrop-blur-sm hover:border-[var(--borderHover)] transition-all duration-300">
             <SkillTitle title="Programming" color="primary" />
             <SkillGrid stack={ProgrammingStack} />
+        </div>
+
+        <!-- Architecture -->
+        <div class="Fade_Up flex_center flex-col gap-4 py-6 px-6 w-full h-full min-h-[280px] rounded-2xl bg-[var(--cardGlass)] border border-[var(--borderColor)] backdrop-blur-sm hover:border-[var(--borderHover)] transition-all duration-300">
+            <SkillTitle title="Architecture" color="primary" />
+            <SkillGrid stack={ArchitectureStack} />
+        </div>
+
+        <!-- Security & Auth -->
+        <div class="Fade_Up flex_center flex-col gap-4 py-6 px-6 w-full h-full min-h-[280px] rounded-2xl bg-[var(--cardGlass)] border border-[var(--borderColor)] backdrop-blur-sm hover:border-[var(--borderHover)] transition-all duration-300">
+            <SkillTitle title="Security & Auth" color="primary" />
+            <SkillGrid stack={SecurityStack} />
         </div>
 
         <!-- Tech & Tools -->
